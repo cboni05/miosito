@@ -1,0 +1,67 @@
+/**{
+    border: solid 1px red;
+}*/
+body{
+font-family: Roboto, sans-serif;
+font-size: 18px;
+}
+.tutto{
+width: 700px;
+margin: 10px auto 10px auto;
+padding: 20px;
+border:solid 3px #a5d9fd;
+background: radial-gradient(circle, #89f7fe, #66a6ff);
+}
+h1{
+padding: 20px;
+margin: 10px auto 10px auto;
+text-align: center;
+}
+.primo{
+width: 500px;
+margin: 10px auto 10px auto;
+padding: 20px;
+border:solid 2px #a5d9fd;
+background: radial-gradient(circle, #89f7fe, #66a6ff);
+border-radius: 30px;
+}
+.secondo{
+width: 500px;
+margin: 10px auto 10px auto;
+padding: 20px;
+border:solid 2px #a5d9fd;
+background: radial-gradient(circle, #89f7fe, #66a6ff);
+border-radius: 30px;
+}
+.terzo{
+width: 500px;
+margin: 10px auto 10px auto;
+padding: 20px;
+border:solid 2px #a5d9fd;
+background: radial-gradient(circle, #89f7fe, #66a6ff);   
+border-radius: 30px;
+}
+.quarto{
+width: 200px;
+margin: 10px auto 10px auto;
+border:solid 2px #a5d9fd;
+background: radial-gradient(circle, #89f7fe, #66a6ff);  
+text-align: center; 
+border-radius: 30px;
+}
+#infoBtn {
+  background-color: #89f7fe;
+  color: #004080;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#infoBtn:hover {
+  background-color: #004080;
+  color: white;
+}

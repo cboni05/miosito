@@ -1,67 +1,188 @@
-/**{
-    border: solid 1px red;
-}*/
-body{
-font-family: Roboto, sans-serif;
-font-size: 18px;
+html {
+    scroll-behavior: smooth;
 }
-.tutto{
-width: 700px;
-margin: 10px auto 10px auto;
-padding: 20px;
-border:solid 4px #a5d9fd;
-background: radial-gradient(circle, #89f7fe, #66a6ff);
-}
-h1{
-padding: 20px;
-margin: 10px auto 10px auto;
-text-align: center;
-}
-.primo{
-width: 500px;
-margin: 10px auto 10px auto;
-padding: 20px;
-border:solid 2px #a5d9fd;
-background: radial-gradient(circle, #89f7fe, #66a6ff);
-border-radius: 30px;
-}
-.secondo{
-width: 500px;
-margin: 10px auto 10px auto;
-padding: 20px;
-border:solid 2px #a5d9fd;
-background: radial-gradient(circle, #89f7fe, #66a6ff);
-border-radius: 30px;
-}
-.terzo{
-width: 500px;
-margin: 10px auto 10px auto;
-padding: 20px;
-border:solid 2px #a5d9fd;
-background: radial-gradient(circle, #89f7fe, #66a6ff);   
-border-radius: 30px;
-}
-.quarto{
-width: 200px;
-margin: 10px auto 10px auto;
-border:solid 2px #a5d9fd;
-background: radial-gradient(circle, #89f7fe, #66a6ff);  
-text-align: center; 
-border-radius: 30px;
-}
-#infoBtn {
-  background-color: #89f7fe;
-  color: #004080;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
+:root {
+    --color-yellow: #EFA10B; /* Colore del logo e sfondo sezione */
+    --color-brown: #712F26;  /* Colore del body e del testo */
 }
 
-#infoBtn:hover {
-  background-color: #004080;
-  color: white;
+body {
+    color: #712F26;
+    margin: 0;
+    padding: 0;
+    font-family: inter; /* Scegli un font di base se non specificato */
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* I link ereditano il colore */
+}
+
+/*HEADER e MENU*/
+
+.header {
+    width: 100%;
+    padding: 10px 0; 
+}
+
+.nav-menu .container-fluid {
+    /* Rimuove padding extra del container bootstrap se necessario */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Stile del Logo "Boni Chiara" */
+.logo {
+    font-family: 'Abril Fatface', serif;
+    font-size: 2em; /* Dimensione del logo */
+    color: #EFA10B; /* Colore specificato: EFA10B */
+    display: inline-block;
+}
+
+/* Stile della lista del menu ad ancora */
+.anchor-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Per gestire il responsive se ci sono troppe voci */
+    gap: 10px; /* Spazio tra le voci */
+}
+
+.anchor-list li {
+    /* Lo sfondo dei link deve essere dello stesso colore del logo */
+    background-color: #EFA10B; 
+    padding: 8px 15px;
+    border-radius: 5px; /* Angoli arrotondati, opzionale */
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9em;
+    /* Il testo dei link deve essere marroncino */
+    color: #712F26; 
+}
+
+.anchor-list a {
+    /* Rimuove la decorazione del link */
+    color: #712F26;
+}
+
+/* --- SEZIONE CHI SONO --- */
+
+.section-chi-sono {
+ 
+   
+
+    /* Lo sfondo della sezione deve ricoprire tutta la larghezza ed essere Giallo */
+    background-color: #EFA10B; 
+    padding-bottom: 50px; /* Spazio sotto il testo */
+}
+
+/* Immagine di copertina a larghezza piena */
+.cover-image {
+    width: 100%;
+    /* Mantiene il contenitore sopra l'immagine a 0px di altezza, 
+    utile se l'immagine è impostata come sfondo, ma qui usiamo un tag <img> */
+    overflow: hidden; 
+    margin-bottom: 0px; /* Spazio sotto l'immagine */
+}
+
+.cover-image img {
+    display: block;
+    width: 100%; /* L'immagine copre tutta la larghezza */
+    height: auto;
+    object-fit: cover; /* Assicura che l'immagine copra lo spazio senza deformarsi */
+}
+
+/* Stile del titolo della sezione */
+.section-title {
+    font-family: 'Abril Fatface', serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+    /* Il titolo deve essere marroncino */
+    color: #712F26; 
+    /* Il testo è giustificato al centro, come richiesto, nel file HTML abbiamo usato text-center di Bootstrap */
+}
+
+/* Stile del testo della sezione */
+.section-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    /* Il testo deve essere marroncino */
+    color: #712F26; 
+    /* Il testo è giustificato al centro, come richiesto, nel file HTML abbiamo usato text-center di Bootstrap */
+}
+
+/* Media Query per Mobile/Tablet: Centrare il logo e il menu */
+@media (max-width: 767px) {
+    .nav-menu .row {
+        text-align: center;
+    }
+
+    .anchor-list {
+        justify-content: center; /* Centra le voci del menu */
+        margin-top: 10px;
+    }
+}
+
+/* --- Sezione Origini --- */
+
+.section-origini {
+    padding: 0; /* Rimuove il padding predefinito */
+    min-height: 100vh; /* La sezione occupa almeno l'intera altezza della finestra (utile per l'effetto affiancato) */
+}
+
+/* Colonna Immagine */
+.section-origini-image-col {
+    padding: 0;
+    overflow: hidden; /* Nasconde eventuali eccessi se l'immagine è troppo grande */
+}
+
+.full-height-img {
+    width: 100%;
+    height: 100%; /* L'immagine copre l'intera colonna */
+    object-fit: cover; /* Assicura che l'immagine copra l'area senza deformarsi */
+}
+
+/* Colonna Testo */
+.section-origini-text-col {
+    background-color: #ffffff; /* Sfondo bianco per l'area del testo */
+    /* Crea lo sfondo a righe come nell'immagine di riferimento */
+   
+  
+}
+
+.origini-content {
+    /* Padding e max-width per centrare il testo e renderlo leggibile all'interno della colonna */
+    padding: 40px; 
+    max-width: 500px;
+    margin: 0 auto; 
+
+}
+
+/* Stile per il titolo piccolo */
+.section-title-small {
+    font-family: 'Abril Fatface', serif; /* Usa il font del tuo header */
+    font-size: 2.5rem; /* Dimensione del titolo "Origini" */
+    color:    #712F26; 
+    margin-bottom: 20px;
+}
+
+/* Stile del testo */
+.section-origini-text-col .section-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #712F26;
+}
+
+/* Adattamenti per schermi più piccoli (mobile) */
+@media (max-width: 991px) {
+    .section-origini-image-col {
+        height: 350px; /* L'immagine ha un'altezza fissa su mobile */
+    }
+    .section-origini-text-col {
+        min-height: auto;
+    }
+    .origini-content {
+        padding: 60px 20px;
+    }
 }

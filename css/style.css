@@ -33,15 +33,6 @@ body {
     color: #F1AD2B; 
 }
 
-/* Mostra solo "Boni Chiara" su desktop, nascondi "BC" */
-.logo-mobile {
-    display: none;
-}
-
-.logo-desktop {
-    display: inline;
-}
-
 /* Stili del contenitore (LISTA) della Navigazione */
 .nav-links {
     list-style: none;
@@ -78,26 +69,6 @@ body {
     /* 2. Appare e si allarga lo sfondo ovale/ellisse */
     background-color: #F1AD2B; 
     border-radius: 10px; /* Rende la forma arrotondata (ellisse/ovale) */
-}
-
-/* Stili Menu Hamburger */
-.hamburger-menu {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.hamburger-menu .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #712F26;
-    transition: all 0.3s ease-in-out;
 }
 
 
@@ -691,6 +662,14 @@ body {
     margin: 0; 
     text-align: left; 
 }
+
+
+
+.protettore-image-high {
+    /* La sintassi è: orizzontale verticale */
+    /* Manteniamo l'allineamento orizzontale al centro, ma spostiamo l'immagine in alto del 30% */
+    object-position: center 90%; 
+}
 /* --- SEZIONE HUBSTORIA --- */
 
 .hubstoria-section {
@@ -849,7 +828,6 @@ body {
     color: #FFFFFF; /* Diventa Bianco per evidenziare l'interazione */
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); 
 }
-
 /* --- RESPONSIVITÀ (MEDIA QUERIES) --- */
 
 /* 1. LAYOUT PER TABLET (Max 1024px) */
@@ -896,4 +874,519 @@ body {
         flex-wrap: wrap;
         justify-content: center;
     }
+    
+    .hobby-item {
+        flex: 1 1 45%; /* Due colonne per riga */
+    }
+
+    /* Sezione Portfolio (Passa a 2 colonne) */
+    .portfolio-gallery-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .portfolio-item {
+        flex: 1 1 45%; 
+        max-width: 45%;
+    }
+
+    /* Sezione Nicla (Passa a Layout verticale) */
+    .nicla-header-container {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    
+    .nicla-text-content {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .nicla-image-wrapper {
+        width: 60%;
+        height: 300px;
+    }
+
+    /* Nicla Steps (Passa a 2 colonne) */
+    .nicla-steps-gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nicla-step-item {
+        flex: 1 1 45%;
+    }
+
+    /* Sezione Protettore (Passa a 2 colonne) */
+    .protettore-gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .protettore-image-item {
+        flex: 1 1 45%;
+        height: 300px;
+    }
+
+    /* Sezione Hubstoria (Passa a Layout verticale) */
+    .hubstoria-header {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .hubstoria-image-left {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    /* Hubstoria Gallery (Passa a 2 colonne) */
+    .hubstoria-gallery-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hubstoria-gallery-item {
+        flex: 1 1 45%;
+    }
+
+    /* Footer */
+    .main-footer {
+        padding: 40px 20px;
+    }
+}
+.logo-mobile {
+    display: none;
+}
+
+/* Assicura che Boni Chiara sia visibile di default su desktop */
+.logo-desktop {
+    display: inline; 
+}
+
+
+/* 2. LAYOUT PER SMARTPHONE (Max 600px) */
+@media (max-width: 600px) {
+    
+    /* Header e Navigazione */
+    .main-header {
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+    }
+
+    /* Hero */
+    .main-title {
+        font-size: 30px;
+        padding: 10px;
+    }
+    
+    /* Titoli e Testo Generici */
+    .section-title, .hobby-main-title, .portfolio-main-title, .nicla-title, .short-film-title, .protettore-title, .hubstoria-title {
+        font-size: 30px;
+    }
+
+    .section-text, .origins-text, .nicla-step-text, .protettore-text, .hubstoria-description, .hubstoria-step-text {
+        font-size: 16px;
+    }
+
+    /* Sezione Origini */
+    .origins-text-block {
+        padding: 50px 20px;
+    }
+
+    /* Sezione Hobby (Passa a 1 colonna) */
+    .hobby-item {
+        flex: 1 1 100%; /* Una colonna per riga */
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* Sezione Portfolio (Passa a 1 colonna) */
+    .portfolio-item {
+        flex: 1 1 100%; 
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    /* Nicla Header */
+    .nicla-image-wrapper {
+        width: 100%;
+    }
+
+    /* Nicla Steps (Passa a 1 colonna) */
+    .nicla-steps-gallery {
+        gap: 20px;
+    }
+    
+    .nicla-step-item {
+        flex: 1 1 100%;
+    }
+    
+    /* Sezione Cortometraggio */
+    .top-half, .bottom-half {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .short-film-image {
+        height: 350px;
+    }
+    
+    .short-film-text {
+        padding: 0 20px;
+    }
+
+    /* Sezione Protettore (Passa a 1 colonna) */
+    .protettore-gallery {
+        gap: 15px;
+    }
+
+    .protettore-image-item {
+        flex: 1 1 100%;
+        height: 250px;
+    }
+
+    /* Sezione Hubstoria */
+    .hubstoria-image-left {
+        width: 100%;
+    }
+    
+    .hubstoria-full-width-image {
+        margin-bottom: 60px;
+        margin-top: 60px;
+    }
+    
+    /* Hubstoria Gallery (Passa a 1 colonna) */
+    .hubstoria-gallery-bottom {
+        gap: 20px;
+    }
+    
+    .hubstoria-gallery-item {
+        flex: 1 1 100%;
+    }
+
+    /* Footer (Layout verticale) */
+    .main-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 20px;
+    }
+    
+    .footer-left {
+        margin-bottom: 20px;
+    }
+
+    .footer-right {
+        text-align: left;
+    }
+
+    .footer-contact, .footer-location {
+        font-size: 16px;
+    }
+}
+
+/* --- STILI MENU HAMBURGER E MOBILE --- */
+
+/* Nasconde il pulsante hamburger su desktop */
+/* Nasconde il pulsante hamburger su desktop */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #712F26;
+    transition: all 0.3s ease-in-out;
+}
+/* Modifiche per l'header su mobile */
+/* Modifiche per l'header su mobile */
+@media (max-width: 567px) {
+    
+    .main-header {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        padding: 15px 70px;
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Mostra "BC" su mobile, nascondi "Boni Chiara" */
+  /* Mostra solo "Boni Chiara" su desktop, nascondi "BC" */
+.logo-mobile {
+    display: none;
+}
+
+.logo-desktop {
+    display: inline;
+}
+    
+    /* 1. Mostra il pulsante hamburger */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    /* 2. Menu mobile - occupa 1/5 della larghezza */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 20%;
+        min-width: 200px;
+        height: 100vh;
+        background-color: #712F26;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-shadow:  0 10px rgba(0,0,0,0.3);
+    }
+
+    /* 3. Link in colonna */
+    .nav-menu .nav-links {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+        gap: 30px;
+        height: auto;
+    }
+    
+    .nav-menu .nav-links li {
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-menu .nav-links .nav-item {
+        font-size: 18px;
+        color: #F1AD2B;
+        padding: 10px 15px;
+        display: block;
+        width: 100%;
+    }
+    
+    .nav-menu .nav-links .nav-item:hover {
+        background-color: #F1AD2B;
+        color: #712F26;
+    }
+
+    /* CLASSE ATTIVA (MOSTRA IL MENU) */
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+    
+    /* Animazione hamburger a X quando attivo */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+/* --- RESPONSIVITÀ (MEDIA QUERIES) --- */
+@media (max-width: 768px) {
+
+ .main-header {
+        /* RIPRISTINA IL LAYOUT LATERALE */
+        display: flex; 
+        justify-content: space-between; /* Sposta logo a sinistra e hamburger a destra */
+        align-items: center; 
+        padding: 15px 20px; /* Riduci il padding, usa 20px */
+        width: 100%;
+        height: 60px; /* Altezza fissa */
+        flex-direction: row; /* Assicura che sia su una riga */
+    }
+
+    .logo-desktop {
+        display: none; /* Nasconde Boni Chiara */
+    }
+
+    .logo-mobile {
+        /* Mostra BC (Assicurati che sia dello stesso font, colore e dimensione del logo desktop */
+        display: inline; 
+        font-family: 'Abril Fatface', serif;
+        font-size: 30px; /* Stesso del .logo */
+        color: #F1AD2B; /* Stesso del .logo */
+    }
+
+    .hamburger-menu .bar {
+        background-color: #F1AD2B; /* Rende le barre Gialle */
+        height: 3px; /* Aumenta lo spessore da 3px a 4px per maggiore visibilità */
+    }
+
+    .hamburger-menu {
+        display: flex;
+        /* Imposta il colore della barra come da screenshot (giallo/arancio) */
+        /* Nota: Nel tuo CSS le barre sono #712F26 (marrone), per renderle gialle: */
+        /* .hamburger-menu .bar { background-color: #F1AD2B; } */
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        /* Larghezza 1/5: 20% è ok, ma mantieni min-width per leggibilità */
+        width: 20%; 
+        min-width: 180px; /* Adattalo se 20% è troppo stretto */
+        height: 100vh;
+        /* MARRONE TRASPARENTE: Usa rgba(113, 47, 38, 0.8) per la trasparenza */
+        background-color: rgba(113, 47, 38, 0.9); /* Sfondo Marrone (712F26) con 90% opacità */
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        /* Rimuovi box-shadow se non lo vuoi (non è nello screenshot) */
+    }
+
+    .nav-menu .nav-links .nav-item {
+        font-size: 19px;
+        color: #F1AD2B; /* Colore Giallo/Arancio */
+        /* ... altre proprietà ... */
+    }
+}
+
+/* Rimuovi questa regola se l'hai aggiunta! */
+@media (max-width: 600px) {
+
+    .hero-background-image {
+        /* Ingrandisce l'immagine al 150% della dimensione originale (50% in più) */
+        transform: scale(2.5); 
+        /* Rimuovi la trasformazione se rende l'immagine troppo tagliata */
+    }
+
+    .title-container {
+        /* Sposta il rettangolo a sinistra */
+        position: absolute;
+        left: 0;
+        top: 50%; /* Posiziona al centro verticale */
+        transform: translateY(-50%); /* Corregge il centro verticale */
+        
+        /* Larghezza: quasi metà pagina (es. 45% - 50%) */
+        width: 50%; 
+        padding: 15px 20px; /* Rimpicciolisci il padding */
+    }
+
+    .main-title {
+        /* Riduci la dimensione del testo del titolo */
+        font-size: 25px;
+        letter-spacing: 3px;
+        text-align: left; /* Allinea il testo a sinistra all'interno del rettangolo */
+    }
+
+    .protettore-image-item {
+        flex: 1 1 100%;
+        height: 200px; /* Altezza base per smartphone */
+    }
+
+   .protettore-gallery .protettore-image-item:nth-child(1) .protettore-image,
+    .protettore-gallery .protettore-image-item:nth-child(2) .protettore-image {
+        /* PROVA VALORI DIVERSI: se non funziona 35%, prova un valore più estremo come 5% */
+        object-position: center 35%;
+    }
+    
+    /* NUOVA REGOLA: Alza la cover del terzo elemento (lato-parasch.jpg) */
+    .protettore-gallery .protettore-image-item:nth-child(3) {
+        height: 250px; /* Aumenta l'altezza solo del terzo item */
+    }
+    .protettore-title {
+        margin-bottom: 50px; 
+        /* 2. LAYOUT PER SMARTPHONE (Max 600px) */
+    /* ... il tuo codice esistente ... */
+    
+    /* Sezione Protettore (Passa a 1 colonna) */
+    .protettore-gallery {
+        gap: 15px;
+    }
+
+    .protettore-image-item {
+        flex: 1 1 100%;
+        /* Riduci l'altezza della cornice */
+        height: 200px; 
+    }
+    
+    /* *** MODIFICA FONDAMENTALE *** */
+    /* Usiamo 'contain' per scalare l'immagine interamente all'interno della cornice, 
+       evitando l'ingrandimento e il taglio */
+    .protettore-image {
+        object-fit: contain; 
+        /* Rimuovi la regola 'object-fit: cover' nella regola base, se non l'hai fatto */
+    }
+    
+    /* ... il resto del tuo codice esistente ... */
+    }
+}
+/* 1. LAYOUT PER TABLET (Max 1024px) */
+@media (max-width: 1024px) {
+    /* ... il tuo codice esistente ... */
+    .protettore-image-item {
+        flex: 1 1 45%;
+    }
+
+    .protettore-gallery .protettore-image-item:nth-child(-n+2) .protettore-image {
+        /* Sposta l'immagine verso l'alto (ad esempio, al 40% o 30% della posizione verticale) */
+        /* center per la posizione orizzontale, 40% per la posizione verticale */
+        object-position: center 40%; 
+    }
+    
+    /* NUOVA REGOLA: Alza la cover del terzo elemento (lato-parasch.jpg) */
+    .protettore-gallery .protettore-image-item:nth-child(3) {
+        height: 300px; /* Aumenta l'altezza solo del terzo item */
+        
+    }
+
+    .protettore-gallery .protettore-image-item:nth-child(-n+2) {
+        /* Molto più basso per un formato orizzontale (Wide) */
+        height: 150px;
+    }
+    /* Sezione Protettore */
+    .protettore-gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+       
+    }
+
+    .protettore-image-item {
+        flex: 1 1 45%;
+        /* L'altezza deve essere ridotta, ad esempio a 250px */
+        height: 250px; 
+    }
+    
+    /* Opzionale: Se vuoi che l'immagine mostri tutto il contenuto, 
+       anche a costo di lasciare spazi bianchi sopra/sotto */
+    /* .protettore-image {
+        object-fit: contain; 
+    } */
+    /* Lasciamo 'cover' per ora, ma riduciamo l'altezza della cornice */
+    
+    /* ... il resto del tuo codice esistente ... */
 }

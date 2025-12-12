@@ -1,67 +1,1081 @@
-/**{
-    border: solid 1px red;
-}*/
-body{
-font-family: Roboto, sans-serif;
-font-size: 18px;
-}
-.tutto{
-width: 700px;
-margin: 10px auto 10px auto;
-padding: 20px;
-border:solid 4px #a5d9fd;
-background: radial-gradient(circle, #89f7fe, #66a6ff);
-}
-h1{
-padding: 20px;
-margin: 10px auto 10px auto;
-text-align: center;
-}
-.primo{
-width: 500px;
-margin: 10px auto 10px auto;
-padding: 20px;
-border:solid 2px #a5d9fd;
-background: radial-gradient(circle, #89f7fe, #66a6ff);
-border-radius: 30px;
-}
-.secondo{
-width: 500px;
-margin: 10px auto 10px auto;
-padding: 20px;
-border:solid 2px #a5d9fd;
-background: radial-gradient(circle, #89f7fe, #66a6ff);
-border-radius: 30px;
-}
-.terzo{
-width: 500px;
-margin: 10px auto 10px auto;
-padding: 20px;
-border:solid 2px #a5d9fd;
-background: radial-gradient(circle, #89f7fe, #66a6ff);   
-border-radius: 30px;
-}
-.quarto{
-width: 200px;
-margin: 10px auto 10px auto;
-border:solid 2px #a5d9fd;
-background: radial-gradient(circle, #89f7fe, #66a6ff);  
-text-align: center; 
-border-radius: 30px;
-}
-#infoBtn {
-  background-color: #89f7fe;
-  color: #004080;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* --- Stili Globali --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    cursor: default;
 }
 
-#infoBtn:hover {
-  background-color: #004080;
-  color: white;
+.nicla-title, .short-film-title, .protettore-title, .hubstoria-title, .hobby-main-title, .portfolio-main-title, .origins-title, chi-sono-title, .short-film-subtitle {
+    /* NUOVA PROPRIETÀ, puoi aggiungerla a tutti i selettori insieme, se usano lo stesso stile */
+    letter-spacing: 1px;
+} 
+
+/* --- HEADER --- */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px; /* Padding omogeneo */
+    height: 60px;
+    background-color: white; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-family: 'Abril Fatface', serif;
+    font-size: 30px;
+    color: #F1AD2B; 
+}
+
+/* Stili del contenitore (LISTA) della Navigazione */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Riduciamo il gap perché ogni elemento avrà il suo sfondo */
+    align-items: center;
+    height: 60px; /* Assicuriamo che la lista sia alta quanto l'header */
+}
+
+/* Stili per ciascun link di navigazione (Chi sono, etc.) */
+.nav-item {
+    text-decoration: none;
+    color: #712F26; 
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; 
+    font-size: 18px; 
+    
+    /* Configurazione per l'Ellisse/Ovale */
+    padding: 8px 12px; /* Aggiunge spazio intorno al testo */
+    transition: transform 0.3s ease-in-out,background-color 0.3s ease-in-out,border-radius 0.3s ease-in-out;
+        
+    display: inline-block; /* Necessario per padding e trasformazione */
+    border-radius: 20px; /* Inizialmente arrotondato, ma trasparente */
+    background-color: transparent; /* Sfondo iniziale trasparente */
+}
+
+/* Effetto al passaggio del mouse (Hover) */
+.nav-item:hover {
+    /* 1. Ingrandimento della parola */
+    transform: scale(1.1); 
+    
+    /* 2. Appare e si allarga lo sfondo ovale/ellisse */
+    background-color: #F1AD2B; 
+    border-radius: 10px; /* Rende la forma arrotondata (ellisse/ovale) */
+}
+
+
+/* --- SEZIONE HERO --- */
+
+.hero-section {
+    /* MODIFICA CHIAVE: Riduci l'altezza per renderla più orizzontale */
+    height: 100vh; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Stili per l'immagine */
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* RIPRISTINO: 'cover' per riempire TUTTO lo spazio */
+    object-fit: cover; 
+    z-index: 1;
+    opacity: 0.8; 
+}
+
+
+
+/* Sfondo rettangolare  */
+.title-container {
+    background-color: #712F26; 
+    padding: 20px 30px;
+    z-index: 2; /* Mettiamo il titolo SOPRA l'immagine */
+    position: relative; /* Necessario per Z-index */
+}
+
+
+
+
+.main-title {
+    font-family: 'Abril Fatface', serif; 
+    font-size: 40px; 
+    color: #F1AD2B;
+    margin: 0;
+    /* NUOVA PROPRIETÀ per lo spazio tra le lettere */
+    letter-spacing: 5px; 
+}
+
+/* --- SEZIONE "CHI SONO" --- */
+
+.centered-content-section {
+    background-color: #F1AD2B; 
+    padding: 250px 40px; /* Spazio uniforme sopra, sotto e ai lati */
+    text-align: center; /* Centra il testo */
+}
+
+.text-content-wrapper {
+    /* Limita la larghezza del testo per una migliore leggibilità */
+    max-width: 800px; 
+    margin: 0 auto; /* Centra orizzontalmente il blocco di testo */
+}
+
+
+
+/* Stili del Testo */
+.section-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; 
+    font-size: 20px; 
+    color: #712F26; 
+    text-align: center; 
+}
+
+.section-title {
+    font-family: Abril Fatface, sans-serif; 
+    font-weight: 600;
+    font-size: 48px; 
+    color: #712F26; 
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* --- SEZIONE ORIGINI (Layout a 2 Colonne) --- */
+
+.origins-section {
+    display: flex; /* Abilita il layout flessibile (due colonne) */
+    align-items: stretch; /* Le colonne si estendono per riempire l'altezza */
+    min-height: 500px; /* Altezza minima della sezione */
+}
+
+/* Stili per il contenitore Immagine (50% a sinistra) */
+.origins-image-placeholder {
+    flex: 1; /* Occupa il 50% della larghezza */
+    overflow: hidden; 
+}
+
+/* Stili per l'Immagine riempie la sua colonna */
+.origins-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assicura che l'immagine copra lo spazio senza distorcere */
+    display: block;
+}
+
+/* Stili per il Blocco Testo (50% a destra) */
+.origins-text-block {
+    flex: 1; /* Occupa il 50% della larghezza */
+    padding: 170px;
+}
+ 
+/* Stili specifici per il Testo e Titolo */
+.origins-title {
+    
+    font-family: 'Abril Fatface', sans-serif;
+    font-weight: 600; 
+    font-size: 48px;
+    color: #712F26; 
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left; 
+}
+
+.origins-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; 
+    font-size: 20px;
+    color: #712F26; 
+    line-height: 1.6;
+    text-align: left; 
+}
+/* --- SEZIONE HOBBY  --- */
+
+.hobby-section {
+    background-color: #712F26; 
+    padding: 150px 40px;
+    text-align: center;
+}
+
+/* Titolo "I miei hobby" */
+.hobby-main-title {
+    font-family: Abril Fatface, sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    color: #F1AD2B; 
+    margin-bottom: 40px;
+}
+
+/* Contenitore Gallery (Layout a 4 colonne) */
+.hobby-gallery-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Spazio tra le immagini */
+    max-width: 1200px; /* Limita la larghezza per una migliore visione */
+    margin: 0 auto;
+}
+
+.hobby-item {
+    flex: 1; /* Ogni item occupa una frazione uguale di spazio (1/4) */
+    position: relative; /* Base per posizionare il testo (overlay) */
+    overflow: hidden; /* Assicura che l'overlay (sovrapposizione) non esca */
+    text-align: left; /* Allinea il sottotitolo */
+}
+
+/* Contenitore Immagine per gestire l'Overlay */
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Stili per l'immagine all'interno dell'hobby item */
+.hobby-image {
+    width: 100%;
+    /*altezza fissa */
+    height: 300px; /* dimensione immagini */
+    
+    /* Assicura che l'immagine copra l'area, tagliando gli eccessi */
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+
+/* Sotto-titolo sotto l'immagine (Montagna, Creare, etc.) */
+.hobby-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #F1AD2B; 
+    margin-top: 15px;
+}
+
+/* --- EFFETTO OVERLAY (Sfondo Nero Trasparente) --- */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(113, 47, 38, 0.80); /* Marrone Scuro Trasparente */
+    transform: translateY(100%); /* Nascosto sotto */
+    transition: transform 0.4s ease-out;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* Testo all'interno dell'Overlay */
+.overlay-text {
+    color: #F1AD2B; 
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* --- HOVER STATE: RIVELA L'OVERLAY --- */
+/* Quando il mouse è sopra il contenitore .image-wrapper */
+.image-wrapper:hover .overlay {
+    transform: translateX(0); /* animazione da sinistra a destra, "i miei hobby" */
+}
+
+/* Opzionale: piccolo ingrandimento dell'immagine quando si fa hover */
+.image-wrapper:hover .hobby-image {
+    transform: scale(1.05);
+}
+
+/* --- SEZIONE PORTFOLIO--- */
+
+.portfolio-section {
+    padding: 100px 40px;
+    text-align: center;
+    background-color: #F8F8F8;
+}
+
+/* Titolo Portfolio */
+.portfolio-main-title {
+    font-family: 'Abril Fatface', serif;
+    font-weight: 400; 
+    font-size: 48px;
+    color: #712F26; 
+    margin-bottom: 80px; 
+    margin-top:40px;
+}
+
+/* Contenitore Gallery */
+.portfolio-gallery-container {
+    display: flex;
+    justify-content: center; 
+    gap: 30px; 
+    max-width: 1400px; 
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* Ogni singola Card del Portfolio */
+.portfolio-item {
+    flex: 1 1 23%; 
+    max-width: 300px; 
+    background-color: white; 
+    overflow: hidden; 
+    /*elemento flessibile e imposta la direzione verticale */
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Immagine del Portfolio */
+.portfolio-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenitore della Descrizione (deve espandersi per riempire lo spazio) */
+.portfolio-description-box {
+    padding: 25px;
+    text-align: left;
+    /* Deve espandersi e usare Flexbox per allineare il contenuto */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sotto-titolo e Testo */
+.portfolio-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; 
+    font-size: 24px;
+    color: #712F26; 
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.portfolio-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; 
+    font-size: 17px;
+    color: #712F26; 
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 15px;
+    
+    /* Rimuovi l'auto-margin dal testo, è solo per il link */
+}
+
+/* Link "Curiosità" */
+.portfolio-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: #F1AD2B;  
+    text-decoration: none;
+    display: inline-block; 
+    transition: transform 0.3s ease-out; 
+    margin-top: auto; /* Spinge il link in fondo */
+}
+
+/* Effetto Hover sul link Curiosità */
+.portfolio-link:hover {
+    transform: scale(1.1); 
+}
+/* --- SEZIONE NICLA --- */
+
+.nicla-section {
+    background-color: #F1AD2B; 
+    padding: 100px 40px;
+    text-align: center;
+    min-height: 100vh; 
+}
+
+
+/* Contenitore per Titolo/Testo e Immagine (Prima Riga) */
+.nicla-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 80px auto; /* Centra e aggiunge spazio sotto */
+    padding-bottom: 50px; /* Spazio prima delle 4 immagini */
+}
+
+/* Limita la larghezza del blocco di testo Nicla, mantenendo l'allineamento a sinistra */
+.nicla-section .nicla-text-content {
+    /* La proprietà max-width costringe il testo ad andare a capo prima */
+    max-width: 600px; 
+    
+    /* Importante: Rimuovi qualsiasi 'margin: auto' o 'text-align: center' 
+       che potrebbe essere presente, e assicurati che l'allineamento sia a sinistra. */
+    text-align: left; 
+    margin-left: 100px; /* Assicura che rimanga allineato al bordo del contenitore genitore */
+    margin-right: 100px; 
+}
+
+.nicla-title {
+    font-family: 'Abril Fatface', serif;
+    font-size: 48px; 
+    color: #712F26; 
+    margin: 0 0 20px 0;
+}
+
+.nicla-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; 
+    font-size: 20px;
+    color: #712F26; 
+    margin: 0;
+}
+
+/* Stili per l'Immagine di Header (a destra) */
+.nicla-image-wrapper {
+    width: 35%; /* L'immagine prende circa un terzo della larghezza */
+    height: 350px; /* Altezza fissa per l'immagine */
+    
+}
+
+.nicla-header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ritaglia l'immagine per riempire il rettangolo */
+    display: block;
+}
+
+/* Contenitore Gallery (Seconda Riga: 4 Immagini) */
+.nicla-steps-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Spazio tra le colonne */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ogni Step delle Istruzioni (Foto + Testo) */
+.nicla-step-item {
+    flex: 1 1 25%; /* Crea 4 colonne di uguale larghezza */
+    text-align: left;
+}
+
+.nicla-step-image {
+    width: 100%;
+    height: 250px; /* Altezza uniforme per tutte le immagini di step */
+    object-fit: cover; /* Assicura che le immagini riempiano il contenitore */
+    display: block;
+    margin-bottom: 15px;
+    
+}
+
+.nicla-step-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; 
+    font-size: 20px;
+    color: #712F26; 
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- SEZIONE "NON DOVEVATE CRESCERMI" --- */
+
+.short-film-section {
+    padding: 0; /* Rimuoviamo tutti i padding dalla sezione */
+    text-align: center;
+    background-color: white; 
+    margin-bottom: 0%;
+    margin-top: 0%;
+    padding-bottom: 0;
+}
+
+.short-film-content-wrapper {
+    background-color: #712F26; 
+    margin: 0 15px; /* 15px di distanza dal bordo (1.5cm) */
+    padding: 0; 
+    
+}
+
+
+.short-film-content-wrapper.bottom-half {
+    text-align: center; /* Centra il testo all'interno del blocco largo */
+}
+
+.short-film-content-wrapper.bottom-half .short-film-text {
+    /* La proprietà max-width costringe il testo ad andare a capo prima */
+    max-width: 900px; 
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center; 
+}
+.top-half {
+    padding-top: 80px; /* Spazio in alto per salire sul frame Nicla */
+    padding-bottom: 30px; /* Spazio sotto il titolo */
+}
+
+.top-half {
+    margin: 0px 0px;
+    padding-top: 100px; /* Spazio in alto per salire sul frame Nicla */
+    padding-bottom: 80px; /* Spazio sotto il titolo */
+}
+
+/* Stili specifici per il wrapper Inferiore (Testo) */
+.bottom-half {
+    margin: 0px 0px; 
+    padding-top: 100px; /* Spazio sopra il testo (sotto l'immagine) */
+    padding-bottom: 150px; /* Spazio sotto il testo */
+}
+
+
+/* Titolo "non dovevate crescermi"*/
+.short-film-title {
+    font-family: 'Abril Fatface', serif;
+    font-size: 48px; 
+    color: #F1AD2B; 
+    text-align: center;
+}
+
+.short-film-subtitle{
+ font-family: 'Abril Fatface', serif;
+    font-size: 25px; 
+    color: #F1AD2B; 
+    text-align: center;
+    margin-bottom: -9%;
+    margin-top: 2%;
+    padding-bottom: 0px;
+}
+
+
+.short-film-image {
+    width: 100vw; /*larghezza dell'immagine */
+    height: 550px; /* tagliato immagine */
+    display: block;
+    object-fit: cover;
+    position: relative; /* posizione per centrare l'immagine sulla pagina */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 130px;
+}
+
+/* Testo  */
+.short-film-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; 
+    font-size: 20px;
+    color: #F1AD2B; 
+    line-height: 1.6;
+    /* Spazio laterale per il testo all'interno del rettangolo marrone */
+    padding: 0 40px; 
+    margin: 0; 
+    text-align: center; 
+}
+
+/* --- SEZIONE PROTETTORE --- */
+
+.protettore-section {
+    /* Rettangolo che occupa tutta la pagina */
+    background-color: #F1AD2B; 
+    padding: 100px 40px;
+    text-align: center;
+}
+
+/* Titolo "Protettore" */
+.protettore-title {
+    font-family: 'Abril Fatface', serif;
+    font-size: 48px; 
+    color: #712F26; 
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.protettore-subtitle-1 {
+ font-family: 'Abril Fatface', serif;
+    font-size: 25px; 
+    color: #712F26; 
+    text-align: center;
+   letter-spacing: 1px;
+    margin-top: -9%;
+    padding-bottom: 0px;
+}
+
+/* Contenitore della Galleria Immagini (3 colonne) */
+.protettore-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 60px auto 60px auto; /* Centra la galleria e aggiunge spazio sotto */
+}
+
+.protettore-image-item {
+    flex: 1; /* Le immagini occupano la stessa grandezza */
+    overflow: hidden; /*  per assicurare che abbiano tutte la stessa altezza visiva */
+    height: 350px; 
+}
+
+.protettore-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assicura che l'immagine copra lo spazio */
+    display: block;
+}
+
+/* Contenitore Testo */
+.protettore-text-content {
+    /* Larghezza limitata per una migliore leggibilità */
+    max-width: 900px; 
+    margin: 0 auto; /* Centra il blocco di testo */
+    text-align: left; /* Allinea il testo sulla sinistra  */
+    padding-top: 20px; 
+}
+
+/* Sottotitolo "Sviluppo" */
+.protettore-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; 
+    font-size: 25px;
+    color: #712F26; 
+    margin-top: -9px;
+    margin-bottom: 15px;
+}
+
+/* Testo Descrittivo */
+.protettore-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; 
+    font-size: 20px;
+    color: #712F26; 
+    line-height: 1.6;
+    margin: 0;
+    padding-right: 100px; 
+    margin: 0; 
+    text-align: left; 
+}
+/* --- SEZIONE HUBSTORIA --- */
+
+.hubstoria-section {
+
+    padding: 100px 40px;
+    text-align: center;
+}
+
+/* 1. LAYOUT HEADER (2 Colonne: Immagine e Testo) */
+.hubstoria-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Allinea in alto */
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    gap: 50px;
+}
+
+/* Immagine a sinistra */
+.hubstoria-image-left {
+    flex: 1 1 35%; /* L'immagine occupa circa il 35% */
+    height: 400px; /* Altezza fissa per l'immagine */
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.hubstoria-tote-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Testo a destra */
+.hubstoria-text-right {
+    flex: 1 1 65%; /* Il testo occupa circa il 65% */
+    text-align: left;
+}
+
+.hubstoria-title {
+    font-family: 'Abril Fatface', serif;
+    font-size: 48px; 
+    color: #712F26;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.hubstoria-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; 
+    font-size: 20px;
+    color: #712F26; 
+    line-height: 1.6;
+}
+
+/* 2. IMMAGINE A LARGHEZZA INTERA */
+.hubstoria-full-width-image {
+    /* Per farla uscire dai padding laterali della sezione */
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-bottom: 120px;
+    margin-top: 120px;
+}
+
+/* 3. GALLERY INFERIORE (3 Colonne) */
+.hubstoria-gallery-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hubstoria-gallery-item {
+    flex: 1; /* Divide lo spazio equamente (3 colonne) */
+    text-align: left;
+}
+
+.hubstoria-step-image {
+    width: 100%;
+    height: 300px; /* Altezza uniforme per le immagini */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.hubstoria-step-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; 
+    font-size: 20px;
+    color: #712F26; 
+    line-height: 1.5;
+    margin: 0;
+}
+/* --- FOOTER --- */
+
+.main-footer {
+    background-color: #712F26; 
+    color: #F1AD2B; 
+    padding: 60px 80px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* 1. Contenuto Sinistro (Logo e Anno) */
+.footer-left {
+    text-align: left;
+}
+
+.footer-logo {
+    font-family: 'Abril Fatface', serif;
+    font-size: 48px;
+    color: #F1AD2B;     
+    margin-bottom: 5px;
+}
+
+.footer-year {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #F1AD2B; 
+    margin: 0;
+}
+
+/* 2. Contenuto Destro (Contatti) */
+.footer-right {
+    text-align: right; 
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+.footer-location {
+    color: #F1AD2B; 
+    margin: 0 0 5px 0;
+}
+
+/* Stili per il link all'interno del Footer */
+.footer-link {
+    /* Mantiene colore e rimuove la sottolineatura */
+    color: inherit; 
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Effetto al passaggio del mouse (Hover) */
+.footer-link:hover {
+    color: #FFFFFF; /* Diventa Bianco per evidenziare l'interazione */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); 
+}
+/* --- RESPONSIVITÀ (MEDIA QUERIES) --- */
+
+/* 1. LAYOUT PER TABLET (Max 1024px) */
+@media (max-width: 1024px) {
+    
+    /* Header e Navigazione */
+    .main-header {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-item {
+        font-size: 16px;
+    }
+
+    /* Titoli e Testo Generici */
+    .section-title, .hobby-main-title, .portfolio-main-title, .nicla-title, .short-film-title, .protettore-title, .hubstoria-title {
+        font-size: 38px;
+    }
+
+    .section-text, .origins-text, .portfolio-text, .nicla-description, .nicla-step-text, .short-film-text, .protettore-text, .hubstoria-description, .hubstoria-step-text {
+        font-size: 18px;
+    }
+
+    /* Sezione Chi Sono */
+    .centered-content-section {
+        padding: 150px 20px;
+    }
+    
+    /* Sezione Origini (Passa a Layout verticale) */
+    .origins-section {
+        flex-direction: column;
+    }
+    
+    .origins-text-block {
+        padding: 80px 40px;
+    }
+
+    /* Sezione Hobby (Passa a 2 colonne) */
+    .hobby-gallery-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hobby-item {
+        flex: 1 1 45%; /* Due colonne per riga */
+    }
+
+    /* Sezione Portfolio (Passa a 2 colonne) */
+    .portfolio-gallery-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .portfolio-item {
+        flex: 1 1 45%; 
+        max-width: 45%;
+    }
+
+    /* Sezione Nicla (Passa a Layout verticale) */
+    .nicla-header-container {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    
+    .nicla-text-content {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .nicla-image-wrapper {
+        width: 60%;
+        height: 300px;
+    }
+
+    /* Nicla Steps (Passa a 2 colonne) */
+    .nicla-steps-gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nicla-step-item {
+        flex: 1 1 45%;
+    }
+
+    /* Sezione Protettore (Passa a 2 colonne) */
+    .protettore-gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .protettore-image-item {
+        flex: 1 1 45%;
+        height: 300px;
+    }
+
+    /* Sezione Hubstoria (Passa a Layout verticale) */
+    .hubstoria-header {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .hubstoria-image-left {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    /* Hubstoria Gallery (Passa a 2 colonne) */
+    .hubstoria-gallery-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hubstoria-gallery-item {
+        flex: 1 1 45%;
+    }
+
+    /* Footer */
+    .main-footer {
+        padding: 40px 20px;
+    }
+}
+
+
+/* 2. LAYOUT PER SMARTPHONE (Max 600px) */
+@media (max-width: 600px) {
+    
+    /* Header e Navigazione */
+    .main-header {
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+    }
+
+    /* Hero */
+    .main-title {
+        font-size: 30px;
+        padding: 10px;
+    }
+    
+    /* Titoli e Testo Generici */
+    .section-title, .hobby-main-title, .portfolio-main-title, .nicla-title, .short-film-title, .protettore-title, .hubstoria-title {
+        font-size: 30px;
+    }
+
+    .section-text, .origins-text, .nicla-step-text, .protettore-text, .hubstoria-description, .hubstoria-step-text {
+        font-size: 16px;
+    }
+
+    /* Sezione Origini */
+    .origins-text-block {
+        padding: 50px 20px;
+    }
+
+    /* Sezione Hobby (Passa a 1 colonna) */
+    .hobby-item {
+        flex: 1 1 100%; /* Una colonna per riga */
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* Sezione Portfolio (Passa a 1 colonna) */
+    .portfolio-item {
+        flex: 1 1 100%; 
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    /* Nicla Header */
+    .nicla-image-wrapper {
+        width: 100%;
+    }
+
+    /* Nicla Steps (Passa a 1 colonna) */
+    .nicla-steps-gallery {
+        gap: 20px;
+    }
+    
+    .nicla-step-item {
+        flex: 1 1 100%;
+    }
+    
+    /* Sezione Cortometraggio */
+    .top-half, .bottom-half {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .short-film-image {
+        height: 350px;
+    }
+    
+    .short-film-text {
+        padding: 0 20px;
+    }
+
+    /* Sezione Protettore (Passa a 1 colonna) */
+    .protettore-gallery {
+        gap: 15px;
+    }
+
+    .protettore-image-item {
+        flex: 1 1 100%;
+        height: 250px;
+    }
+
+    /* Sezione Hubstoria */
+    .hubstoria-image-left {
+        width: 100%;
+    }
+    
+    .hubstoria-full-width-image {
+        margin-bottom: 60px;
+        margin-top: 60px;
+    }
+    
+    /* Hubstoria Gallery (Passa a 1 colonna) */
+    .hubstoria-gallery-bottom {
+        gap: 20px;
+    }
+    
+    .hubstoria-gallery-item {
+        flex: 1 1 100%;
+    }
+
+    /* Footer (Layout verticale) */
+    .main-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 20px;
+    }
+    
+    .footer-left {
+        margin-bottom: 20px;
+    }
+
+    .footer-right {
+        text-align: left;
+    }
+
+    .footer-contact, .footer-location {
+        font-size: 16px;
+    }
 }

@@ -1278,6 +1278,29 @@ body {
 /* Rimuovi questa regola se l'hai aggiunta! */
 @media (max-width: 600px) {
 
+    .nicla-title {
+        text-align: left; /* Allinea il titolo a sinistra */
+        /* Puoi anche ridurre il margine se è troppo grande */
+        margin-left: 20px; /* Aggiungi un margine/padding per distanziarlo dal bordo */
+        margin-right: 20px;
+    }
+
+    .nicla-description {
+        text-align: left; /* Allinea la descrizione a sinistra */
+        padding-left: 20px; /* Aggiungi padding per distanziare dal bordo */
+        padding-right: 20px;
+        /* Assicurati che il testo occupi tutta la larghezza del contenitore padre */
+        width: auto; 
+    }
+
+    #nicla { 
+        /* Rimuove qualsiasi centratura dovuta a margin: auto su un contenitore a larghezza fissa */
+        margin-left: 0; 
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .hero-background-image {
         /* Ingrandisce l'immagine al 150% della dimensione originale (50% in più) */
         transform: scale(2.5); 
@@ -1292,7 +1315,7 @@ body {
         transform: translateY(-50%); /* Corregge il centro verticale */
         
         /* Larghezza: quasi metà pagina (es. 45% - 50%) */
-        width: 50%; 
+        width: 45%; 
         padding: 15px 20px; /* Rimpicciolisci il padding */
     }
 

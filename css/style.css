@@ -1362,7 +1362,35 @@ body {
     }
 
    
-  
+  .protettore-description-container {
+        /* Assicurati che il contenitore occupi la larghezza piena */
+        width: 100%;
+        /* Resetta i margini che spingono il blocco */
+        margin-left: 0;
+        margin-right: 0;
+        /* Aggiungi il padding di sicurezza (es. 20px) */
+        padding: 0 10px; 
+    }
+
+    .protettore-subtitle-1 {
+        /* Se ha margini laterali, riducili o azzerali */
+        margin-left: 10px; 
+        margin-right: 10px;
+        text-align: left; /* Allinea a sinistra */
+    }
+
+    .protettore-description {
+        /* Azzeriamo i margini laterali fissi che limitavano lo spazio */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        
+        /* Aggiungiamo un padding per non incollare il testo ai bordi dello schermo */
+        padding: 0 90px; 
+        
+        /* Assicuriamo l'allineamento a sinistra (per coerenza) */
+        text-align: left;
+    }
+    }
 
     .hero-background-image {
         /* Ingrandisce l'immagine al 150% della dimensione originale (50% in più) */
@@ -1430,7 +1458,11 @@ body {
     
     /* ... il resto del tuo codice esistente ... */
     }
-}
+
+
+
+
+
 /* 1. LAYOUT PER TABLET (Max 1024px) */
 @media (max-width: 1024px) {
     /* ... il tuo codice esistente ... */

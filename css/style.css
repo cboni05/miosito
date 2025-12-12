@@ -1121,6 +1121,74 @@ body {
 /* Modifiche per l'header su mobile */
 /* Modifiche per l'header su mobile */
 @media (max-width: 567px) {
+
+    /* --- LAYOUT RESPONSIVE (Max 768px) --- */
+@media (max-width: 768px) {
+    
+    /* === FIX SEZIONE ORIGINI (Per allineamento a sinistra e piena larghezza) === */
+    .origins-section {
+        flex-direction: column; /* Impila immagine e testo verticalmente */
+    }
+
+    .origins-text-block {
+        /* Riduci il padding esagerato di 170px e aggiungi un padding laterale normale */
+        padding: 40px 20px; 
+    }
+    
+    .origins-title, .origins-text {
+        text-align: left; /* Forza l'allineamento a sinistra */
+    }
+    
+    /* === FIX SEZIONE NICLA (Per allineamento a sinistra e piena larghezza) === */
+    
+    /* Rimuovi il padding estremo dalla sezione intera, usa solo per l'area di contenuto */
+    .nicla-section {
+        padding: 50px 0; 
+        text-align: left; /* Rimuovi la centratura del testo di base */
+    }
+
+    /* 1. Contenitore Header (Testo e Immagine Nicla) */
+    .nicla-header-container {
+        flex-direction: column; /* Impila immagine e testo verticalmente */
+        max-width: 100%; 
+        width: 100%;
+        margin: 0 0 50px 0; /* Rimuovi la centratura del blocco */
+        padding: 0 20px; /* Aggiunge un respiro laterale al blocco */
+    }
+    
+    /* 2. Blocco Testo (Risolve il problema del testo al centro) */
+    .nicla-section .nicla-text-content {
+        max-width: 100%;
+        width: 100%;
+        text-align: left; 
+        
+        /* QUESTA È LA FIX CRUCIALE: Rimuove i margini fissi di 100px */
+        margin-left: 0; 
+        margin-right: 0; 
+        padding-bottom: 20px; 
+    }
+    
+    .nicla-title, 
+    .nicla-description {
+        text-align: left; /* Assicura allineamento a sinistra */
+    }
+    
+    /* 3. Immagine (adattala a piena larghezza) */
+    .nicla-image-wrapper {
+        width: 100%; 
+        height: auto; 
+    }
+    
+    /* 4. Gallery Steps (sotto) */
+    .nicla-steps-gallery {
+        flex-direction: column; /* Impila i 4 step verticalmente */
+        padding: 0 20px; /* Aggiungi padding laterale */
+        max-width: 100%;
+    }
+    
+    /* ... I tuoi stili mobile esistenti (header, ecc.) ... */
+    
+}
     
     .main-header {
         display: flex; 
@@ -1277,29 +1345,24 @@ body {
 
 /* Rimuovi questa regola se l'hai aggiunta! */
 @media (max-width: 600px) {
-
-    .nicla-title {
-        text-align: left; /* Allinea il titolo a sinistra */
-        /* Puoi anche ridurre il margine se è troppo grande */
-        margin-left: 20px; /* Aggiungi un margine/padding per distanziarlo dal bordo */
-        margin-right: 20px;
+/* Contenitore di testo specifico */
+    .nicla-text-container {
+        width: 100%;
+        max-width: none;
+        
+        /* Resetta i margini di blocco e aggiungi il padding di sicurezza (20px) */
+        margin: 0; 
+        padding: 0 20px; /* Questo padding distanzierà il testo dai bordi dello schermo */
+    }
+    
+   .nicla-title,
+   #nicla .nicla-description {
+        text-align: left !important; /* Forza l'allineamento */
+        width: auto !important;
     }
 
-    .nicla-description {
-        text-align: left; /* Allinea la descrizione a sinistra */
-        padding-left: 20px; /* Aggiungi padding per distanziare dal bordo */
-        padding-right: 20px;
-        /* Assicurati che il testo occupi tutta la larghezza del contenitore padre */
-        width: auto; 
-    }
-
-    #nicla { 
-        /* Rimuove qualsiasi centratura dovuta a margin: auto su un contenitore a larghezza fissa */
-        margin-left: 0; 
-        margin-right: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
+   
+  
 
     .hero-background-image {
         /* Ingrandisce l'immagine al 150% della dimensione originale (50% in più) */

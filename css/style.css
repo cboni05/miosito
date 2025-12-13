@@ -1391,6 +1391,48 @@ body {
         width: auto;
     }
 
+    /* Sezione Cortometraggio */
+    .top-half, .bottom-half {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .short-film-image {
+        height: 350px;
+    }
+
+    .short-film-text {
+        padding: 0 0; /* Azzeriamo il padding laterale qui */
+    }
+
+    /* 1. Aria intorno al TITOLO (senza mandarlo a capo) */
+    .short-film-title {
+        /* Aggiungiamo padding orizzontale al titolo per dargli aria. 
+           'white-space: nowrap;' impedisce al testo di andare a capo, 
+           ma dobbiamo rimuovere questa proprietà se non è strettamente necessario 
+           e fidarci del font-size ridotto per la visualizzazione */
+        padding: 0 10px; /* Piccolo padding laterale */
+        /* Aggiungiamo 'min-width' per assicurare che il titolo stia in una riga. */
+        display: inline-block;
+        white-space: nowrap; /* Impedisce il 'a capo' */
+        max-width: 95%; /* Limite massimo per non forzare troppo */
+    }
+
+    /* 2. Allinea il TESTO descrittivo a sinistra */
+    .short-film-content-wrapper.bottom-half .short-film-text {
+        text-align: left; /* Allinea il testo a sinistra */
+        padding: 0 20px; /* Aggiungi padding laterale per staccarlo dai bordi */
+        max-width: none; /* Rimuovi la limitazione di larghezza (max-width: 900px) per l'allineamento su mobile */
+        width: 100%; /* Assicura che occupi la larghezza piena */
+        margin: 0; /* Rimuovi i margini auto per l'allineamento a sinistra */
+    }
+    
+    /* Assicuriamoci che anche il sottotitolo sia corretto */
+    .short-film-subtitle {
+         padding: 0 10px; /* Aggiungiamo padding come per il titolo */
+         text-align: center; /* Manteniamo il sottotitolo centrato */
+    }
+
     .hero-background-image {
         /* Ingrandisce l'immagine al 150% della dimensione originale (50% in più) */
         transform: scale(2.5); 

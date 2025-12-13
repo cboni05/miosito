@@ -1029,11 +1029,10 @@ body {
     }
 
     .protettore-subtitle {
-    font-family: 'Abril Fatface', sans-serif;
+    font-family: 'Abril Fatface', sans-serif!important;
     font-weight: 600; 
     font-size: 20px;
     color: #712F26; 
-
     letter-spacing: 2px;
 }
 

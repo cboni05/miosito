@@ -1438,13 +1438,27 @@ body {
     }
 
 .short-film-title {
+        text-align: center;
+        padding: 0;
+        
+        /* AGGIUNGI O MODIFICA: Forza il testo su una singola riga */
+        white-space: nowrap; 
+        
+        max-width: 100%;
+        margin: 0 auto 5px auto; 
+        
     text-align: center;
     padding: 0;
-    white-space: normal;
+    
+    white-space: nowrap; /* Forza la singola riga */
+    
+    overflow: hidden; /* Nasconde ciò che esce dal contenitore */
+    text-overflow: ellipsis; /* Aggiunge "..." alla fine del testo tagliato (opzionale, ma consigliato) */
+    
     max-width: 100%;
-    /* Margine: Top (0), Right (auto), Bottom (5px), Left (auto) */
     margin: 0 auto 5px auto; 
-}
+
+    }
 
 .short-film-subtitle {
     text-align: center;

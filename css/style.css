@@ -1405,7 +1405,7 @@ body {
 
     /* Sezione Cortometraggio */
     .top-half {
-        padding-top: 50px; 
+        padding-top: 100px !important; 
         padding-bottom: 50px; 
         padding-left: 20px;  /* Aria laterale di 20px */
         padding-right: 20px; /* Aria laterale di 20px */
@@ -1439,7 +1439,7 @@ body {
 
 .short-film-title {
     text-align: center;
-    padding: 90px 0px;
+    padding: 0;
     white-space: normal;
     max-width: 100%;
     /* Margine: Top (0), Right (auto), Bottom (5px), Left (auto) */
@@ -1448,11 +1448,10 @@ body {
 
 .short-film-subtitle {
     text-align: center;
-    /* Rimuovi la padding negativa e il white-space: none non valido */
-    padding : 10px 0px;
+    padding: 0;
     white-space: normal;
     max-width: 100%;
-    /* Margine: Top (0), Bottom (0) */
+    /* Margine: Top (0), Bottom (0). L'unica distanza verticale sarà data dal Titolo. */
     margin: 0 auto; 
 }
 

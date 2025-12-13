@@ -1433,6 +1433,41 @@ body {
          text-align: center; /* Manteniamo il sottotitolo centrato */
     }
 
+    /* 1. Sottotitolo "Progetto in digitale 3D" su una sola riga */
+    .protettore-subtitle-1 {
+        /* Rimuovi i margini laterali per dare più spazio */
+        margin-left: 0; 
+        margin-right: 0;
+        text-align: center; /* Mantiene il sottotitolo centrato */
+        
+        /* Forza il testo a non andare a capo */
+        white-space: nowrap; 
+        overflow: hidden; /* Nasconde l'eccesso se proprio non ci sta */
+        text-overflow: ellipsis; /* Aggiunge i puntini se viene tagliato */
+        
+        /* Aggiungi padding orizzontale per 'aria' */
+        padding: 0 10px; 
+    }
+
+    /* 2. Testo descrittivo "Sviluppo" a tutta larghezza */
+    .protettore-text-content {
+        /* Assicura che il contenitore di testo occupi la larghezza massima disponibile */
+        max-width: 100%; 
+        width: 100%;
+        margin: 0 auto; /* Centra il blocco principale */
+        
+        /* Aggiunge il padding laterale per staccare il testo dai bordi dello schermo */
+        padding: 20px; 
+    }
+
+    /* Rimuovi il padding laterale fisso dal testo, ora gestito dal contenitore */
+    .protettore-text {
+        padding-right: 0; /* Rimuove il vecchio padding-right: 100px; */
+        max-width: 100%;
+        width: 100%;
+        text-align: left; /* Mantiene l'allineamento a sinistra */
+    }
+
     .hero-background-image {
         /* Ingrandisce l'immagine al 150% della dimensione originale (50% in più) */
         transform: scale(2.5); 

@@ -1438,24 +1438,21 @@ body {
     }
 
 .short-film-title {
+       
         text-align: center;
         padding: 0;
         
-        /* AGGIUNGI O MODIFICA: Forza il testo su una singola riga */
-        white-space: nowrap; 
+        /* SOLUZIONE: Riduci la dimensione del carattere finché non sta su una riga */
+        font-size: 22px; 
+        /* Regola Cruciale: Forza il testo su una singola riga */
+        white-space: nowrap !important; 
+        /* Nasconde la parte di testo che non ci sta (se succede ancora) */
+        overflow: hidden; 
+        text-overflow: ellipsis; 
         
         max-width: 100%;
+        /* 5px di spazio sotto per separare dal sottotitolo */
         margin: 0 auto 5px auto; 
-        
-    text-align: center;
-    padding: 0;
-    
-    white-space: nowrap !important; /* Forza la singola riga */
-    
-    overflow: hidden; /* Nasconde ciò che esce dal contenitore */
-    text-overflow: ellipsis; /* Aggiunge "..." alla fine del testo tagliato (opzionale, ma consigliato) */
-
-
     }
 
 .short-film-subtitle {

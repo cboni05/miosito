@@ -117,20 +117,30 @@ body {
     background-color: #712F26; 
     padding: 20px 30px;
     z-index: 2; /* Mettiamo il titolo SOPRA l'immagine */
-    position: relative; /* Necessario per Z-index */
+    
+    /* CENTRATURA */
+    display: flex;
+    justify-content: center; /* centra orizzontalmente */
+    align-items: center;     /* centra verticalmente */
+    
+    /* occuperà tutta la foto */
+    position: absolute;      /* sopra l'immagine */
+    top: 50;
+    left: 50;
+    width: 30%;
+    height: 20%;            /* tutta l’altezza del contenitore foto */
 }
-
-
-
 
 .main-title {
     font-family: 'Abril Fatface', serif; 
     font-size: 40px; 
     color: #F1AD2B;
-    margin: 0;
-    /* NUOVA PROPRIETÀ per lo spazio tra le lettere */
     letter-spacing: 5px; 
+    text-align: center;
 }
+
+
+
 
 /* --- SEZIONE "CHI SONO" --- */
 
